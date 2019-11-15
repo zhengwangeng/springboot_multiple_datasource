@@ -1,0 +1,28 @@
+
+# 服务绑定的端口，不写默认是8080
+server:
+  port: 8080
+  servlet:
+    context-path: / # 服务的路径，不写默认为空
+
+
+spring:
+  # 应用名称
+  application:
+    name: springboot_multiple_datasource
+
+  # 数据源
+  datasource:
+    # master数据源配置
+    master:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/test1?useUnicode=true&characterEncoding=utf-8
+      username: root
+      password: root
+
+    # cluster数据源配置
+    cluster:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/test2?useUnicode=true&characterEncoding=utf-8
+      username: root
+      password: root
